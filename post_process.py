@@ -40,7 +40,6 @@ if N_cells_x == 40 and N_cells_y == 80:
     X, Y = X40, Y80
 
 
-
 # plot the streamlines
 plt.streamplot(X,Y,u,v,density=2,linewidth=1,color=velocity_magnitude,cmap='jet')
 clb = plt.colorbar()
@@ -61,7 +60,7 @@ plt.savefig("./sol/pressure_profile.png")
 plt.show()
 
 # plot the CA profile
-plt.pcolormesh(Y, X, c[3:N_cells_x + 3, 3:N_cells_y + 3], cmap='RdBu')
+plt.pcolormesh(X, Y, c[3:N_cells_x + 3, 3:N_cells_y + 3], cmap='RdBu')
 clb = plt.colorbar(shrink=0.5)
 clb.ax.tick_params(labelsize=8)
 clb.ax.set_title('cA profile',fontsize=8)
@@ -70,7 +69,7 @@ plt.savefig("./sol/cA_profile.png")
 plt.show()
 
 # plot the CB profile
-plt.pcolormesh(Y, X, c2[3:N_cells_x + 3, 3:N_cells_y + 3], cmap='RdBu')
+plt.pcolormesh(X, Y, c2[3:N_cells_x + 3, 3:N_cells_y + 3], cmap='RdBu')
 clb = plt.colorbar(shrink=0.5)
 clb.ax.tick_params(labelsize=8)
 clb.ax.set_title('cB profile',fontsize=8)
